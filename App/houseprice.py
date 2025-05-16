@@ -4,7 +4,7 @@ import numpy as np
 from itertools import combinations_with_replacement
 
 class HousePricePredictor:
-    def __init__(self, model_path='/content/linear_house.pkl', degree=4):
+    def __init__(self, model_path='linear_house.pkl', degree=4):
         # Load saved pipeline (scaler + model)
         self.pipeline = joblib.load(model_path)
         self.degree = degree

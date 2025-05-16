@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>House Price Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+  body {
+    background: url('{% static "images/background.jpg" %}') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 35px 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    width: 340px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  }
+
+  h1 {
+    color: #4a90e2;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  input[type=number] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1.8px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fdfdfd;
+  }
+
+  input[type=number]:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(74,144,226,0.4);
+  }
+
+  button {
+    background: linear-gradient(to right, #4a90e2, #357ABD);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 14px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(to right, #357ABD, #2d6bbd);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(53, 122, 189, 0.3);
+  }
+
+  .result {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    color: #27ae60;
+    font-weight: 700;
+    animation: popIn 0.5s ease-in-out;
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 420px) {
+    .container {
+      width: 90%;
+      padding: 25px 20px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Predict House Price</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="sqft">Square Feet</label>
+      <input type="number" id="sqft" name="sqft" min="100" required placeholder="e.g., 1280" />
+
+      <label for="bedrooms">Bedrooms</label>
+      <input type="number" id="bedrooms" name="bedrooms" min="0" required placeholder="e.g., 2" />
+
+      <label for="bathrooms">Bathrooms</label>
+      <input type="number" step="0.5" id="bathrooms" name="bathrooms" min="0" required placeholder="e.g., 2.0" />
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if price %}
+      <div class="result">
+        Predicted Price: ${{ price|floatformat:2 }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
