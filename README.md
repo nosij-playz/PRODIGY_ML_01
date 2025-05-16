@@ -1,7 +1,7 @@
 
 # House Price Prediction using Linear Regression
 
-![Web Interface](image.png)
+![Web Interface](image.jpg)
 
 This project implements a **Linear Regression** model to predict house prices using key property features:
 
@@ -27,9 +27,10 @@ project-root/
 │   ├── train.csv             # Training data
 │   └── test.csv              # Testing data
 │
-├── module/                   # Python module for logic
-│   ├── houseprice.py         # Model training and prediction logic
-│   └── main.py               # Script to train the model
+├── module/                   # Python module for model logic and execution
+│   ├── houseprice.py         # Contains a class with methods to train, save, and predict
+│   ├── main.py               # Script that uses the class in houseprice.py to perform operations
+│   └── model.pkl             # Trained machine learning model (output after training)
 │
 ├── image.jpg                 # Screenshot of the web interface
 ├── manage.py                 # Django management script
@@ -75,11 +76,12 @@ cd module
 python main.py
 ```
 
-This will:
+This script will:
 
-* Load the training dataset
+* Load the training dataset from `dataset/train.csv`
+* Instantiate and use a class from `houseprice.py`
 * Train a linear regression model
-* Optionally save the trained model (if implemented)
+* Save the trained model as `model.pkl`
 
 ---
 
