@@ -127,5 +127,6 @@ For bugs, feedback, or contributions, feel free to:
 
 * Open an issue on the GitHub repository
 * Reach out to the project maintainer via the repository page
+* Or visit to text me: [contact me](https://myporfolio-1o1h.onrender.com/contact)
 
 ---
