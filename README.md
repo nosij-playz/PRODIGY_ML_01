@@ -1,7 +1,7 @@
 
 # House Price Prediction using Linear Regression
 
-![Web Interface](image.jpg)
+![Web Interface](image.png)
 
 This project implements a **Linear Regression** model to predict house prices using key property features:
 
@@ -105,7 +105,7 @@ Use the web form to input property details and view predicted house prices.
 
 ## 🖼 Interface Preview
 
-![Web Interface Screenshot](image.jpg)
+![Web Interface Screenshot](image.png)
 
 ---
 
