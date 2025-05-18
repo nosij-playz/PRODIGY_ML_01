@@ -17,26 +17,24 @@ The web application is developed with **Django** for the frontend and **scikit-l
 
 project-root/
 │
-├── App/                      # Django app for the web interface
-│   ├── migrations/           # Django migration files
-│   ├── templates/            # HTML templates
-│   ├── static/               # CSS, JS, image assets
-│   └── views.py              # Django views (sample)
+├── App/                           # Django app for the web interface  
+│   ├── migrations/                # Django migration files  
+│   ├── templates/                 # HTML templates  
+│   ├── static/                    # CSS, JS, image assets  
+│   └── views.py                   # Django views (sample)  
 │
-├── dataset/                  # Dataset folder
-│   ├── train.csv             # Training data
-│   └── test.csv              # Testing data
+├── dataset/                       # Dataset folder  
+│   ├── train.csv                  # Training data  
+│   └── test.csv                   # Testing data  
 │
-├── module/                   # Python module for model logic and execution
-│   ├── houseprice.py         # Contains a class with methods to train, save, and predict
-│   ├── main.py               # Script that uses the class in houseprice.py to perform operations
-│   └── model.pkl             # Trained machine learning model (output after training)
+├── module/                        # Python module for model logic and execution  
+│   ├── houseprice.py              # Contains class with methods to train, save, and predict  
+│   ├── main.py                    # Script that uses the class in houseprice.py to perform operations  
+│   └── model.pkl                  # Trained machine learning model (output after training)  
 │
-├── image.jpg                 # Screenshot of the web interface
-├── manage.py                 # Django management script
-└── README.md                 # Project documentation
-
----
+├── image.jpg                      # Screenshot of the web interface  
+├── manage.py                      # Django management script  
+└── README.md                      # Project documentation  
 
 ## 🚀 Features
 
